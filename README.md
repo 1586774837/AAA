@@ -2,7 +2,7 @@
 
 
 
-一个功能强大的服务器实时监控系统，支持真实服务器SSH监控和模拟数据测试，提供直观的数据大屏展示。
+一个功能(貌似)强大的服务器实时监控系统，支持真实服务器SSH监控和模拟数据测试，提供直观的数据大屏展示。
 
 ## 📑 目录
 
@@ -47,15 +47,26 @@
   - 📝 主机备注 - 为每台主机添加描述信息
   - 🔍 详细信息查看 - 查看主机的实时指标和历史趋势
 
+  #### 4. 智能告警
+
+  - 🚨 多维度告警 - CPU、内存、磁盘超阈值自动告警
+  - 📌 状态变更追踪 - 主机上线/下线自动记录
+  - ⏰ 精确到秒的时间记录 - YYYY-MM-DD HH:MM:SS格式
+  - 🔔 告警信息展示主机管理页：最新5条（可查看全部）监控大屏：全部显示，时间倒序
+  - 🎨 颜色分级提示 - 红色（危险）、黄色（警告）、绿色（正常）
 
 ## 📸 界面预览
 
 ### 监控大屏
-![监控大屏界面1](./screenshots/cab72e32-a2a5-496f-b190-8a5b5a9064f8.png)
-![监控大屏界面2](./screenshots/image-20251129011709281.png)
+
+![image-20251129011639433](C:\Users\15867\AppData\Roaming\Typora\typora-user-images\image-20251129011639433.png)
+
+![image-20251129011709281](C:\Users\15867\AppData\Roaming\Typora\typora-user-images\image-20251129011709281.png)
 
 ### 主机管理
-![主机管理界面](./screenshots/image-20251129011804494.png)
+
+![image-20251129011804494](C:\Users\15867\AppData\Roaming\Typora\typora-user-images\image-20251129011804494.png)
+
 
 
 ## 🚀 快速开始
@@ -308,6 +319,4 @@ docker-compose -f docker/docker-compose.yml logs -f
 - 移动端APP支持
 
   数据导出功能
-
-
 
