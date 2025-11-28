@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器监控系统 - 主机管理</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <style>
+        .host-type-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .host-type-real {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        .host-type-simulated {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+        .simulated-host-panel {
+            border-left: 4px solid #ff9800;
+            background: #fffaf0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>服务器监控系统</h1>
+        
+        <!-- 模拟主机快速添加面板 -->
+        <div class="card simulated-host-panel">
+            <h2>🚀 快速添加模拟主机</h2>
+            <p>模拟主机用于测试界面功能，无需真实服务器</p>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button class="btn btn-warning" onclick="hostManager.addSimulatedHost()">添加一台模拟主机</button>
+              
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>添加监控主机</h2>
+            <form id="addHostForm">
+                <div class="form-group">
+                    <label for="hostType">主机类型 *</label>
+                    <select id="hostType" name="hostType" class="form-control" onchange="hostManager.toggleHostType()">
+                        <option value="real">真实服务器</option>
+                        <option value="simulated">模拟主机</option>
+                    </select>
+                </div>
+                
+                <div id="realHostFields">
+                    <div class="form-group">
+                        <label for="ip">IP 地址 *</label>
+                        <input type="text" id="ip" name="ip" placeholder="192.168.1.100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">用户名 *</label>
+                        <input type="text" id="username" name="username" value="root" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">密码 *</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="port">SSH 端口</label>
+                        <input type="number" id="port" name="port" value="22">
+                    </div>
+                </div>
+                
+                <div id="simulatedHostFields" style="display: none;">
+                    <div class="alert alert-info">
+                        <strong>模拟主机说明：</strong><br>
+                        模拟主机将生成虚拟监控数据，用于测试界面功能。<br>
+                        无需真实服务器，立即可用。
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">主机名称</label>
+                    <input type="text" id="name" name="name" placeholder="给主机起个名字">
+                </div>
+                
+                <button type="submit" class="btn">添加主机</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>监控主机列表</h2>
+            <div id="hostsList">
+                <p>加载中...</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>系统导航</h2>
+            <p><a href="/dashboard" class="btn">查看监控大屏</a></p>
+            <p><a href="/health" class="btn">检查服务状态</a></p>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

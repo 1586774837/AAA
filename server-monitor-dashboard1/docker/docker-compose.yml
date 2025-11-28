@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  monitor-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../data:/app/data
+      - ../frontend:/app/frontend
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    container_name: server-monitor
+
+  # 可选：添加 Redis 用于缓存（加分项）
+  # redis:
+  #   image: redis:alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+
+  # 可选：添加 Nginx 反向代理（加分项）
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - monitor-app

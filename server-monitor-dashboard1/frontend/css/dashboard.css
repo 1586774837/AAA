@@ -1,0 +1,119 @@
+/* 监控大屏专用样式 */
+.dashboard-body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+.dashboard-body .navbar {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* 服务器卡片 */
+.server-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.server-card-header {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.server-card-body {
+    padding: 20px;
+}
+
+/* 指标卡片 */
+.metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* 图表容器 */
+.chart-container {
+    height: 200px;
+    width: 100%;
+}
+
+/* 状态指示器 */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-online {
+    background: rgba(46, 204, 113, 0.2);
+    border: 1px solid #2ecc71;
+}
+
+.status-offline {
+    background: rgba(231, 76, 60, 0.2);
+    border: 1px solid #e74c3c;
+}
+
+/* 进度条样式 */
+.progress {
+    background: rgba(255, 255, 255, 0.1);
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+.cpu-progress {
+    background: linear-gradient(90deg, #2ecc71, #f1c40f);
+}
+
+.memory-progress {
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+}
+
+.disk-progress {
+    background: linear-gradient(90deg, #e74c3c, #e67e22);
+}
+
+/* 刷新按钮 */
+#refreshBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+#refreshBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
